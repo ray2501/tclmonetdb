@@ -196,7 +196,7 @@ Connection to a MonetDB database is established by invoking `tdbc::monetdb::conn
 passing it the name to be used as a connection handle,
 followed by a host name, port number, username, password and dbname.
 
-The tdbc::cubrid::connection create object command supports the -encoding,
+The tdbc::monetdb::connection create object command supports the -encoding,
 -isolation and -readonly option (only gets the default setting).
 
 MonetDB driver for TDBC implements a statement object that represents a SQL statement in a database.
