@@ -4,7 +4,7 @@
 
 Name:          tclmonetdb
 Summary:       MonetDB MAPI library wrapper for Tcl
-Version:       0.9.7
+Version:       0.9.8
 Release:       1
 License:       Mozilla Public License, Version 2.0
 Group:         Development/Libraries/Tcl
