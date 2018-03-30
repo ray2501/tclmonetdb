@@ -8,7 +8,7 @@ Version:       0.9.7
 Release:       1
 License:       Mozilla Public License, Version 2.0
 Group:         Development/Libraries/Tcl
-Source:        https://sites.google.com/site/tclmonetdb/tclmonetdb_0.9.7.zip
+Source:        tclmonetdb_%{version}.tar.gz
 URL:           https://sites.google.com/site/tclmonetdb
 BuildRequires: autoconf
 BuildRequires: make
