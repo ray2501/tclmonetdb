@@ -3,7 +3,7 @@
 %define buildroot %{_tmppath}/%{name}
 
 Name:          tclmonetdb
-Summary:       MonetDB MAPI library wrapper for Tcl
+Summary:       Tcl wrapper for MonetDB MAPI library
 Version:       0.9.8
 Release:       1
 License:       Mozilla Public License, Version 2.0
