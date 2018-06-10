@@ -308,13 +308,14 @@ A simple example -
 
     db close
 
-Another simple example -
+Another simple example (update for MonetDB Mar2018 Release,
+test `if not exists` support) -
 
     package require monetdb
 
     monetdb db -host localhost -port 50000 -user monetdb -passwd monetdb -dbname demo
 
-    set stmt [db query "CREATE TABLE emp (name VARCHAR(20), age INT)"]
+    set stmt [db query "CREATE TABLE if not exists emp (name VARCHAR(20), age INT)"]
     $stmt close
 
     set stmt [db query "INSERT INTO emp VALUES ('John', 23)"]
@@ -331,7 +332,7 @@ Another simple example -
     }
     $stmt close
 
-    set stmt [db query "DROP TABLE emp"]
+    set stmt [db query "DROP TABLE if exists emp"]
     $stmt close
 
     db close
