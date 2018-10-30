@@ -33,6 +33,20 @@ variable (if need):
 
 This extension needs Tcl 8.6.
 
+Notice:  
+After Mar2018 SP1, it is impossible to just load mapi library 
+on Linux or UNIX system. User needs patch mapilib and stream Makefile.ag 
+and rebuild MonetDB.
+
+For example,
+
+    sed -i 's/WIN32?//g' clients/mapilib/Makefile.ag
+    sed -i 's/@WIN32_TRUE@//g' clients/mapilib/Makefile.in
+    sed -i 's/WIN32?//g' common/stream/Makefile.ag
+    sed -i 's/@WIN32_TRUE@//g' common/stream/Makefile.in
+
+The load library issue is from MonetDB itself, not this extension.
+
 
 Related Extension
 =====
