@@ -26,7 +26,7 @@
  */
 
 static const char *const monetdbSuffixes[] = {
-    "", ".8", ".9", ".10", NULL
+    "", ".8", ".9", ".10", ".11", ".12", NULL
 };
 
 /*
