@@ -47,6 +47,9 @@ For example,
 
 The load library issue is from MonetDB itself, not this extension.
 
+After Oct2020, MonetDB uses CMake to build its source code.
+It is not necessar to do above changes.
+
 
 Related Extension
 =====
