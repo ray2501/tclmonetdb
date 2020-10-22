@@ -4,11 +4,11 @@
 
 Name:          tclmonetdb
 Summary:       Tcl wrapper for MonetDB MAPI library
-Version:       0.9.8
+Version:       0.9.9
 Release:       1
 License:       Mozilla Public License, Version 2.0
 Group:         Development/Libraries/Tcl
-Source:        tclmonetdb_%{version}.tar.gz
+Source:        tclmonetdb-%{version}.tar.gz
 URL:           https://sites.google.com/site/tclmonetdb
 BuildRequires: autoconf
 BuildRequires: make
@@ -22,7 +22,7 @@ tclmonetdb is a Tcl extension by using MAPI library to connect MonetDB.
 This extension is using Tcl_LoadFile to load mapi library.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 
 %build
 ./configure \
