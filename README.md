@@ -12,7 +12,7 @@ available swap space, but (also) uses memory-mapped files to exploit disk
 storage beyond the swap space as virtual memory.
 
 tclmonetdb is a Tcl extension by using
-[MAPI library](https://www.monetdb.org/Documentation/Manuals/SQLreference/Programming/MAPI)
+[MAPI library](https://www.monetdb.org/Documentation/SQLreference/Programming/MAPI)
 to connect MonetDB. I write this extension to research MonetDB and MAPI.
 
 [Tcl Database Connectivity (TDBC)](http://www.tcl.tk/man/tcl8.6/TdbcCmd/tdbc.htm)
@@ -55,11 +55,11 @@ Related Extension
 =====
 
 Tcl users can use [TDBC-ODBC](https://www.tcl.tk/man/tcl/TdbcodbcCmd/tdbc_odbc.htm) bridge via MonetDB
-[ODBC driver](https://www.monetdb.org/Documentation/Manuals/SQLreference/Programming/ODBC)
+[ODBC driver](https://www.monetdb.org/Documentation/SQLreference/Programming/ODBC)
 to connect MonetDB.
 
 Or you can try my other project [TDBCJDBC](https://github.com/ray2501/TDBCJDBC)
-via MonetDB [JDBC driver](https://www.monetdb.org/Documentation/Manuals/SQLreference/Programming/JDBC) to connect MonetDB. 
+via MonetDB [JDBC driver](https://www.monetdb.org/Documentation/SQLreference/Programming/JDBC) to connect MonetDB.
 
 
 License
