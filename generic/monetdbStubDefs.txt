@@ -1,0 +1,38 @@
+# monetdbStubDefs.txt --
+#
+#	Definitions of routines in the MonetDB libraries that will be
+#	resolved and imported at run time.
+#
+#-----------------------------------------------------------------------------
+
+* STUBSTRUCT: monetdbStubs
+* LIBRARY: libmapi
+
+Mapi mapi_connect(const char *host, int port, const char *username, const char *password, const char *lang, const char *dbname);
+MapiMsg mapi_destroy(Mapi mid);
+MapiMsg mapi_disconnect(Mapi mid);
+MapiMsg mapi_reconnect(Mapi mid);
+MapiMsg mapi_ping(Mapi mid);
+MapiMsg mapi_error(Mapi mid);
+char* mapi_error_str(Mapi mid);
+int mapi_get_autocommit(Mapi mid);
+MapiMsg mapi_setAutocommit(Mapi mid, int autocommit);
+MapiHdl mapi_prepare(Mapi mid, const char *cmd);
+MapiMsg mapi_param_string(MapiHdl hdl, int fnr, int sqltype, char *ptr, int *sizeptr);
+MapiMsg mapi_param_numeric(MapiHdl hdl, int fnr, int scale, int precision, void *ptr);
+MapiMsg mapi_clear_params(MapiHdl hdl);
+MapiMsg mapi_execute(MapiHdl hdl);
+MapiMsg mapi_fetch_reset(MapiHdl hdl);
+MapiMsg mapi_close_handle(MapiHdl hdl);
+MapiHdl mapi_query(Mapi mid, const char *cmd);
+MapiMsg mapi_seek_row(MapiHdl hdl, mapi_int64 rowne, int whence);
+mapi_int64 mapi_fetch_all_rows(MapiHdl hdl);
+int mapi_fetch_row(MapiHdl hdl);
+char* mapi_fetch_field(MapiHdl hdl, int fnr);
+int mapi_get_field_count(MapiHdl hdl);
+mapi_int64 mapi_get_row_count(MapiHdl hdl);
+mapi_int64 mapi_rows_affected(MapiHdl hdl);
+char* mapi_get_name(MapiHdl hdl, int fnr);
+char* mapi_get_type(MapiHdl hdl, int fnr);
+char* mapi_get_query(MapiHdl hdl);
+int mapi_is_connected(Mapi mid);

@@ -1,0 +1,220 @@
+2023-11-24  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.14
+    * Change monetdbSuffixes order
+
+2022-11-19  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.13
+    * Add more string to monetdbSuffixes
+
+2022-01-26  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.12
+    * Add more string to monetdbSuffixes
+
+2021-08-10  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.11
+    * Add more string to monetdbSuffixes
+
+2021-04-23  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.10
+    * Fix issue: tdbcmonetdb.tcl update version to 0.9.10
+
+2020-10-23  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.9
+
+2020-10-22  Danilo Chang  <ray2501@gmail.com>
+
+    * Add more string to monetdbSuffixes
+
+2018-03-30  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.8
+    * Add more string to monetdbSuffixes, for Mar2018 version
+
+2017-07-18  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.7
+    * Add more string to monetdbSuffixes, for Jul2017 version
+
+2017-05-16  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.6
+    * Add more string to monetdbSuffixes
+
+2017-05-15  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.5
+    * Add monet_version method
+
+2016-12-15  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.4
+    * Update MAPI header
+
+2016-12-14  Danilo Chang  <ray2501@gmail.com>
+
+    * Upgrade TEA version to 3.10
+
+2016-11-14  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.9.3
+    * Free memory when connect fail
+
+2016-11-07  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.9.2
+    * Update MAPI header
+
+2016-11-06  Danilo Chang  <ray2501@gmail.com>
+
+    * Update Thread_Exit method
+
+2016-11-04  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.9.1
+    * Update README.md
+
+2016-11-03  Danilo Chang  <ray2501@gmail.com>
+
+    * Update TDBC configure method
+
+2016-10-04  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.9
+    * Sync tclmonetdb and TDBC driver version
+    * Cleanup code
+
+2016-09-01  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.8
+
+2016-08-31  Danilo Chang  <ray2501@gmail.com>
+
+    * TDBC: fix infinite loop issue when using allrows and UPDATE statement
+
+2016-08-27  Danilo Chang  <ray2501@gmail.com>
+
+    * Update test cases
+
+2016-08-15  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.7
+    * Cleanup code
+
+2016-05-30  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.6
+    * Improve STMT_HANDLE fetch_field command
+
+2016-05-04  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.5
+    * Add TDBC real and decimal type support
+      Change float type mapping to "double"
+
+2016-04-23  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.4
+    * Update foreignkeys method
+    * Update columns method
+
+2016-04-22  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.3
+    * Not necessary to implement transaction method, remove it
+
+2016-04-20  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.2
+
+2016-04-19  Danilo Chang  <ray2501@gmail.com>
+
+    * Update columns method
+    * Update primarykeys method: add schema name info
+    * Update tables method: add schema name info
+
+2016-04-18  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7.1
+    * Fix configure method error
+
+2016-04-17  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.7 to test
+    * Updatge README.md
+
+2016-04-16  Danilo Chang  <ray2501@gmail.com>
+
+    * Add TDBC interface support initial version
+    * Improve fetch_row_list and fetch_row_dict command,
+      add NULL result handle
+
+2016-04-13  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.6
+    * Redesign API
+
+2016-04-08  Danilo Chang  <ray2501@gmail.com>
+
+    * Setup to version 0.5
+    * Add fetch_all_rows and seek_row method
+    * Add mapi_fetch_all_rows and mapi_seek_row method
+      in monetdbStubDefs.txt
+
+2016-02-18  Danilo Chang  <ray2501@gmail.com>
+
+    * Version setup to v0.4
+    * Update README.md
+    * Implement param_numeric command
+    * monetdbStubDefs.txt: Add mapi_param_numeric function
+
+2016-02-17  Danilo Chang  <ray2501@gmail.com>
+
+    * Version setup to v0.3.2
+    * Update README.md
+    * Add port number check in monetdb command.
+
+2016-02-15  Danilo Chang  <ray2501@gmail.com>
+
+    * Version setup to v0.3.1
+    * Add more check in setAutocommit, param_string,
+      fetch_field, get_field_name and get_field_type
+      command
+
+2016-02-03  Danilo Chang  <ray2501@gmail.com>
+
+    * Version setup to v0.3
+    * Update README.md
+
+2016-02-02  Danilo Chang  <ray2501@gmail.com>
+
+    * Update README.md
+    * Add ping command
+
+2016-02-01  Danilo Chang  <ray2501@gmail.com>
+
+    * Version setup to v0.2
+    * Update README.md
+    * Add param_string/clear_params command
+    * Fix some commands give Tcl_WrongNumArgs wrong parameters
+
+2016-01-30  Danilo Chang  <ray2501@gmail.com>
+
+    * Update README.md
+
+2016-01-29  Danilo Chang  <ray2501@gmail.com>
+
+    * Version setup to v0.1.1
+    * Implement prepare/execute command
+
+2016-01-28  Danilo Chang  <ray2501@gmail.com>
+
+    * Implement monetdb command
+    * Rename to monetdb extension
+    * Dump sample extension
+
