@@ -522,6 +522,72 @@ Below is an exmaple:
     $statement close
     db close
 
+For blob data, it is necessary to encode these characters to a hex encoded
+string when to add it to database. And when you get the blob data
+from database, you get a hex encoded string, then you need to decode it to
+characters.
+
+Tcl can use `binary encode hex` and `binary decode hex` to encode/decode
+hex string.
+
+Below is an example to show the case.
+
+    package require tdbc::monetdb
+
+    tdbc::monetdb::connection create db localhost 50000 monetdb monetdb demo
+
+    set statement [db prepare {DROP TABLE IF EXISTS record}]
+    $statement execute
+    $statement close
+
+    set statement [db prepare \
+        {create table record (name varchar(40) not null, memo blob, primary key(name))}]
+    $statement execute
+    $statement close
+
+    set statement [db prepare "START TRANSACTION"]
+    $statement execute
+    $statement close
+
+    set data [binary encode hex "Hello World!"]
+    set statement [db prepare "insert into record values('Arthur Lin', '$data')"]
+    $statement execute
+    $statement close
+
+    set statement [db prepare {insert into record values(:name, :memo)}]
+    $statement paramtype name varchar
+    $statement paramtype memo auto
+
+    set name "George Liao"
+    set memo [binary encode hex "He is a liar."]
+    $statement execute
+
+    set name "Gino Chang"
+    set memo [binary encode hex "Thank you."]
+    $statement execute
+
+    set name "Orange Cat"
+    set memo [binary encode hex "I miss you."]
+    $statement execute
+
+    set statement [db prepare "COMMIT"]
+    $statement execute
+    $statement close
+
+    set statement [db prepare {SELECT * FROM record}]
+
+    $statement foreach row {
+        puts "name: [dict get $row name], memo: [binary decode hex [dict get $row memo]]"
+    }
+
+    $statement close
+
+    set statement [db prepare {DROP TABLE record}]
+    $statement execute
+    $statement close
+
+    db close
+
 Another example:
 
     package require tdbc::monetdb
