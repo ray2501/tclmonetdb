@@ -1,3 +1,8 @@
+2023-11-28  Danilo Chang  <ray2501@gmail.com>
+
+    * Bump version to 0.9.15
+    * It should be better in several cases to return ERROR
+
 2023-11-24  Danilo Chang  <ray2501@gmail.com>
 
     * Bump version to 0.9.14
