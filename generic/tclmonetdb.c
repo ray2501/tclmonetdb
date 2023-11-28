@@ -280,6 +280,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
         if (mapi_param_string(pStmt->hdl, field_number, sql_type, ptr, NULL) !=
             MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
@@ -340,6 +341,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
         if (mapi_param_numeric(pStmt->hdl, field_number, scale, precision,
                                (void *)ptr) != MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
@@ -358,6 +360,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
 
         if (mapi_clear_params(pStmt->hdl) != MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
@@ -376,6 +379,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
 
         if (mapi_execute(pStmt->hdl) != MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
@@ -394,6 +398,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
 
         if (mapi_fetch_reset(pStmt->hdl) != MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
@@ -431,6 +436,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
         // #define MAPI_SEEK_END	2
         if (mapi_seek_row(pStmt->hdl, rowne, whence) != MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
@@ -933,6 +939,7 @@ static int DbObjCmd(void *cd, Tcl_Interp *interp, int objc,
 
         if (mapi_setAutocommit(pDb->dbh, autocommit) != MOK) {
             return_obj = Tcl_NewBooleanObj(0);
+            rc = TCL_ERROR;
         } else {
             return_obj = Tcl_NewBooleanObj(1);
         }
