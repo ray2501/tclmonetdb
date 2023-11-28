@@ -545,9 +545,7 @@ Below is an example to show the case.
     $statement execute
     $statement close
 
-    set statement [db prepare "START TRANSACTION"]
-    $statement execute
-    $statement close
+    db begintransaction
 
     set data [binary encode hex "Hello World!"]
     set statement [db prepare "insert into record values('Arthur Lin', '$data')"]
@@ -570,9 +568,7 @@ Below is an example to show the case.
     set memo [binary encode hex "I miss you."]
     $statement execute
 
-    set statement [db prepare "COMMIT"]
-    $statement execute
-    $statement close
+    db commit
 
     set statement [db prepare {SELECT * FROM record}]
 
