@@ -1,0 +1,68 @@
+# tdbcmonetdb.test --
+#
+#	Tests for the tdbc::monetdb extesnion
+#
+
+configure -loadfile "library/tdbcmonetdb.tcl"
+loadTestedCommands
+package require tdbc::monetdb
+
+#-------------------------------------------------------------------------------
+
+test tdbcmonetdb-1.1 {open a database, wrong # args} {*}{
+    -body {
+	tdbc::monetdb::connection create db
+    }
+    -returnCodes error
+    -match glob
+    -result {wrong # args*}
+}
+
+test tdbcmonetdb-1.2 {open a database} {*}{
+    -body {
+    set result [catch {tdbc::monetdb::connection create db localhost 50000 monetdb monetdb demo}]
+    }
+    -result 0
+}
+
+#-------------------------------------------------------------------------------
+
+test tdbcmonetdb-2.1 {prepare, wrong # args} {*}{
+    -body {
+    set stmt [db prepare]
+    }
+    -returnCodes error
+    -match glob
+    -result {wrong # args*}
+}
+
+test tdbcmonetdb-2.2 {prepare, as dicts} {*}{
+    -body {
+      set stmt [db prepare {select 'Hello World!' as msg}]
+      set rst [$stmt execute]
+      $rst nextrow -as dicts variable
+      $rst close
+      $stmt close
+      string compare "Hello World!" [dict get $variable msg]
+    }
+    -result 0
+}
+
+test tdbcmonetdb-2.3 {prepare, as lists} {*}{
+    -body {
+      set stmt [db prepare {select 1+1 as result}]
+      set rst [$stmt execute]
+      $rst nextrow -as lists variable
+      $rst close
+      $stmt close
+      expr [lindex $variable 0]==2
+    }
+    -result 1
+}
+
+#-------------------------------------------------------------------------------
+
+catch {db close}
+
+cleanupTests
+return
