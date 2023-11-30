@@ -7,6 +7,12 @@ configure -loadfile "library/tdbcmonetdb.tcl"
 loadTestedCommands
 package require tdbc::monetdb
 
+set testhost localhost
+set testport 50000
+set username monetdb
+set password monetdb
+set database demo
+
 #-------------------------------------------------------------------------------
 
 test tdbcmonetdb-1.1 {open a database, wrong # args} {*}{
@@ -20,7 +26,8 @@ test tdbcmonetdb-1.1 {open a database, wrong # args} {*}{
 
 test tdbcmonetdb-1.2 {open a database} {*}{
     -body {
-    set result [catch {tdbc::monetdb::connection create db localhost 50000 monetdb monetdb demo}]
+    set result [catch \
+      {tdbc::monetdb::connection create db $testhost $testport $username $password $database}]
     }
     -result 0
 }
