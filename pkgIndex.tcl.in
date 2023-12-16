@@ -8,3 +8,6 @@ if {[package vsatisfies [package provide Tcl] 9.0-]} {
     package ifneeded @PACKAGE_NAME@ @PACKAGE_VERSION@ \
 	    [list load [file join $dir @PKG_LIB_FILE8@] [string totitle @PACKAGE_NAME@]]
 }
+
+package ifneeded tdbc::monetdb @PACKAGE_VERSION@ \
+    [list source [file join $dir tdbcmonetdb.tcl]]

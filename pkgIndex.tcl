@@ -8,3 +8,6 @@ if {[package vsatisfies [package provide Tcl] 9.0-]} {
     package ifneeded monetdb 0.9.16 \
 	    [list load [file join $dir libmonetdb0.9.16.so] [string totitle monetdb]]
 }
+
+package ifneeded tdbc::monetdb 0.9.16 \
+    [list source [file join $dir tdbcmonetdb.tcl]]
