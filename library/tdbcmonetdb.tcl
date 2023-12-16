@@ -9,7 +9,7 @@
 package require tdbc
 package require monetdb
 
-package provide tdbc::monetdb 0.9.15
+package provide tdbc::monetdb 0.9.16
 
 
 ::namespace eval ::tdbc::monetdb {
