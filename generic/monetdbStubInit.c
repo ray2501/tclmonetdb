@@ -4,7 +4,7 @@
  *	Stubs tables for the foreign MonetDB libraries so that
  *	Tcl extensions can use them without the linker's knowing about them.
  *
- * @CREATED@ 2018-03-30 00:45:37Z by genExtStubs.tcl from monetdbStubDefs.txt
+ * @CREATED@ 2024-09-11 15:44:40Z by genExtStubs.tcl from monetdbStubDefs.txt
  *
  *-----------------------------------------------------------------------------
  */
@@ -26,7 +26,7 @@
  */
 
 static const char *const monetdbSuffixes[] = {
-    "", ".26", ".14", ".13", ".12", ".11", ".10", ".9", ".8", NULL
+    "", ".27", ".26", ".14", ".13", ".12", ".11", ".10", ".9", ".8", NULL
 };
 
 /*
