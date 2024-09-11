@@ -50,6 +50,15 @@ The load library issue is from MonetDB itself, not this extension.
 After Oct2020, MonetDB uses CMake to build its source code.
 It is not necessary to do above changes.
 
+Notice:
+Since Aug2024, the file name of mapi library changed.
+It is necessary to create a soft link by yourself
+(or update monetdbStubDefs.txt LIBRARY name).
+
+For example,
+
+    sudo ln -s libmapi-11.51.3.so.27.0.0 libmapi.so.27
+
 
 Related Extension
 =====
