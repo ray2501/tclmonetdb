@@ -212,7 +212,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
 
     case STMT_PARAM_STRING: {
         char *ptr = NULL;
-        int len = 0;
+        Tcl_Size len = 0;
         int sql_type = 0;
         int field_number = 0;
         Tcl_Obj *return_obj;
@@ -294,7 +294,7 @@ static int MONET_STMT(void *cd, Tcl_Interp *interp, int objc,
         int scale = 0;
         int precision = 0;
         char *ptr = NULL;
-        int len = 0;
+        Tcl_Size len = 0;
         Tcl_Obj *return_obj;
 
         if (objc == 6) {
@@ -951,7 +951,7 @@ static int DbObjCmd(void *cd, Tcl_Interp *interp, int objc,
     case DB_QUERY: {
         char *zQuery = NULL;
         char *errorStr = NULL;
-        int len = 0;
+        Tcl_Size len = 0;
         Tcl_HashEntry *newHashEntryPtr;
         char handleName[16 + TCL_INTEGER_SPACE];
         Tcl_Obj *pResultStr = NULL;
@@ -1008,7 +1008,7 @@ static int DbObjCmd(void *cd, Tcl_Interp *interp, int objc,
     case DB_PREPARE: {
         char *zQuery = NULL;
         char *errorStr = NULL;
-        int len = 0;
+        Tcl_Size len = 0;
         Tcl_HashEntry *newHashEntryPtr;
         char handleName[16 + TCL_INTEGER_SPACE];
         Tcl_Obj *pResultStr = NULL;
@@ -1212,7 +1212,7 @@ static int MONETDB_MAIN(void *cd, Tcl_Interp *interp, int objc,
  */
 
 EXTERN int Monetdb_Init(Tcl_Interp *interp) {
-    if (Tcl_InitStubs(interp, "8.6", 0) == NULL) {
+    if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL) {
         return TCL_ERROR;
     }
 
