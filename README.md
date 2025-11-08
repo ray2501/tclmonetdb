@@ -57,7 +57,7 @@ It is necessary to create a soft link by yourself
 
 For example,
 
-    sudo ln -s libmapi-11.51.5.so.27.0.1 libmapi.so.27
+    sudo ln -s libmapi-11.53.13.so.28.0.3 libmapi.so.28
 
 
 Related Extension
